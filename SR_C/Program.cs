@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace SR_C
 {
@@ -10,6 +11,11 @@ namespace SR_C
     {
         static void Main(string[] args)
         {
+            Program pr = new Program();
+            while (true)
+            {
+                
+            }
         }
     }
 }
