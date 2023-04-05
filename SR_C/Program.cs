@@ -124,7 +124,7 @@ namespace SR_C
 
         public void baca(MySqlConnection con)
         {
-            MySqlAdapter cmd = new MySqlAdapter("Select * From barang", con);
+            MySqlCommand cmd = new MySqlCommand("Select * From barang", con);
             DataSet ds = new DataSet();
             cmd.Fill(ds, "barang");
             DataTable dt = ds.Tables["mahasiswa"];
@@ -135,7 +135,7 @@ namespace SR_C
                 {
                     Console.WriteLine(row[col]);
                 }
-                Console.Write("\n")
+                Console.Write("\n");
             }
 
         }
