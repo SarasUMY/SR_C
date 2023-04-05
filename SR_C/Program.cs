@@ -40,6 +40,22 @@ namespace SR_C
                                 conn.Open();
                                 Console.Clear();
                                 while (true)
+                                {
+                                    try
+                                    {
+                                        Console.WriteLine("\nMenu");
+                                        Console.WriteLine("1. Melihat Seluruh Data");
+                                        Console.WriteLine("2. Tambah Data");
+                                        Console.WriteLine("3. Keluar");
+                                        Console.Write("\nEnter your choice (1-3): ");
+                                        char ch = Convert.ToChar(Console.ReadLine());
+                                        switch (ch)
+                                        {
+
+                                        }
+
+                                    }
+                                }
 
                             }
                     }
