@@ -44,22 +44,16 @@ namespace SR_C
                                     try
                                     {
                                         Console.WriteLine("\nMenu");
-                                        Console.WriteLine("1. Melihat Seluruh Data");
-                                        Console.WriteLine("2. Tambah Data");
-                                        Console.WriteLine("3. Keluar");
-                                        Console.Write("\nEnter your choice (1-3): ");
+                                        Console.WriteLine("1. Membuat Data");
+                                        Console.WriteLine("2. Mencari Data");
+                                        Console.WriteLine("3. Menghapus Data");
+                                        Console.WriteLine("4. Update Data");
+                                        Console.WriteLine("5. Keluar");
+                                        Console.Write("\nEnter your choice (1-5): ");
                                         char ch = Convert.ToChar(Console.ReadLine());
                                         switch (ch)
                                         {
                                             case '1':
-                                                {
-                                                    Console.Clear();
-                                                    Console.WriteLine("DATA WARUNG\n");
-                                                    Console.WriteLine();
-                                                    pr.baca(conn);
-                                                }
-                                                break;
-                                            case '2':
                                                 {
                                                     Console.Clear();
                                                     Console.WriteLine("INPUT DATA BARANG\n");
@@ -85,6 +79,15 @@ namespace SR_C
                                                     }
                                                 }
                                                 break;
+                                            case '2':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("DATA WARUNG\n");
+                                                    Console.WriteLine();
+                                                    pr.baca(conn);
+                                                }
+                                                break;
+
 
                                         }
 
