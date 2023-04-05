@@ -59,7 +59,32 @@ namespace SR_C
                                                     pr.baca(conn);
                                                 }
                                                 break;
-                                          
+                                            case '2':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("INPUT DATA BARANG\n");
+                                                    Console.WriteLine("Masukkan id_barang :");
+                                                    string id_barang = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan nama_barang :");
+                                                    string nama_barang = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan harga :");
+                                                    string harga = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan stok :");
+                                                    string stok = Console.ReadLine();
+                                                    Console.WriteLine("Masukkan id_supplier :");
+                                                    string id_supplier = Console.ReadLine();
+                                                    try
+                                                    {
+                                                        pr.insert(id_barang, nama_barang, harga, stok, id_supplier, conn);
+                                                        conn.Close();
+                                                    }
+                                                    catch
+                                                    {
+                                                        Console.WriteLine("\nAnda tidak memiliki " +
+                                                            "akses untuk menambah data")''
+                                                    }
+                                                }
+                                                break;
 
                                         }
 
