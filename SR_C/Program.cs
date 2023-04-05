@@ -87,18 +87,75 @@ namespace SR_C
                                                     pr.baca(conn);
                                                 }
                                                 break;
-
+                                            case '5':
+                                                conn.Close();
+                                                return;
+                                            default:
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("\nInvalid option");
+                                                }
+                                                break;
 
                                         }
-
+                                    }
+                                    catch
+                                    {
+                                        Console.WriteLine("\nCheck for the value entered.");
                                     }
                                 }
-
                             }
+                        default:
+                            {
+                                Console.WriteLine("\nInvalid option");
+                            }
+                            break;
                     }
-
+                }
+                catch
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Tidak Dapat Mengakses Database Menggunakan User Tersebut\n");
+                    Console.ResetColor();
                 }
             }
+        }
+
+        public void baca(MySqlConnection con)
+        {
+            MySqlAdapter cmd = new MySqlAdapter("Select * From barang", con);
+            DataSet ds = new DataSet();
+            cmd.Fill(ds, "barang");
+            DataTable dt = ds.Tables["mahasiswa"];
+
+            foreach (DataRow roe in dt.Rows)
+            {
+                foreach (DataColumn col in dt.Columns)
+                {
+                    Console.WriteLine(row[col]);
+                }
+                Console.Write("\n")
+            }
+
+        }
+        public void insert(string id_barang, string nama_barang, string harga, string stok, string id_supplier,
+            MySqlConnection con)
+        {
+
+            string str;
+            str = "insert into barang (id_barang,nama_barang,harga,stok,id_supplier)"
+            + " values(@id_barang,@nama_barang,@harga,@stok,@id_supplier)";
+            MySqlCommand cmd = new MySqlCommand(str, con);
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            cmd.Parameters.Add(new MySqlParameter("id_barang", id_barang));
+            cmd.Parameters.Add(new MySqlParameter("nama_barang", nama_barang));
+            cmd.Parameters.Add(new MySqlParameter("harga", harga));
+            cmd.Parameters.Add(new MySqlParameter("stok", stok));
+            cmd.Parameters.Add(new MySqlParameter("id_supplier", id_supplier));
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Berhasil Ditambahkan");
         }
     }
 }
