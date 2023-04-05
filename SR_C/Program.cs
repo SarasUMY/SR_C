@@ -29,7 +29,19 @@ namespace SR_C
                     char chr = Convert.ToChar(Console.ReadLine());
                     switch (chr)
                     {
+                        case 'K':
+                            {
+                                MySqlConnection conn;
+                                string connectionString;
+                                connectionString = @"SERVER=Mysql@127.0.0.1:3306" + server + ";DATABASE=database_warung" +
+                                db + ";UserID=SARAS" + user + ";PASSWORD=1234" + pass + ";Port=3306";
 
+                                conn = new MySqlConnection(connectionString);
+                                conn.Open();
+                                Console.Clear();
+                                while (true)
+
+                            }
                     }
 
                 }
