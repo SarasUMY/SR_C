@@ -127,7 +127,7 @@ namespace SR_C
             MySqlCommand cmd = new MySqlCommand("Select * From barang", con);
             DataSet ds = new DataSet();
             cmd.Fill(ds, "barang");
-            DataTable dt = ds.Tables["mahasiswa"];
+            DataTable dt = ds.Tables["barang"];
 
             foreach (DataRow roe in dt.Rows)
             {
